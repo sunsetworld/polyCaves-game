@@ -35,9 +35,9 @@ public class scoringAndLives : MonoBehaviour
     {
         if (t.GetgameTimer() > 0)
         {
-            timerTxt.text = t.GetgameTimer().ToString();
+            timerTxt.text = t.GetgameTimer().ToString("F2");
         }
-        else if (t.GetgameTimer() < 0)
+        else if (t.GetgameTimer() <= 0)
         {
             timerTxt.text = ":(";
         }
@@ -46,7 +46,7 @@ public class scoringAndLives : MonoBehaviour
         {
             livesTxt.text = "Lives = " + kP.GetLives().ToString();
         }
-        else if (kP.GetLives() < 0)
+        else if (kP.GetLives() <= 0)
         {
             livesTxt.text = "):";
         }

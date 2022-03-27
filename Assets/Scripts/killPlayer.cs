@@ -32,8 +32,14 @@ public class killPlayer : MonoBehaviour
         
         if (lives <= 0)
         {
-            Destroy(gameObject);
+            lives = 0;
+            Invoke("death", 0.2f);
         }
+    }
+
+    private void death()
+    {
+        Destroy(gameObject);
     }
 
     public int GetLives()
