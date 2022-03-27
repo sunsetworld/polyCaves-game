@@ -22,12 +22,14 @@ public class killPlayer : MonoBehaviour
         if (other.tag == "Enemy")
         {
             reduceLives();
+            Destroy(other.gameObject);
         }
     }
 
     private void reduceLives()
     {
         lives -= 1;
+        
         if (lives <= 0)
         {
             Destroy(gameObject);
