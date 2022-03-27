@@ -24,4 +24,61 @@ public class gameConfig : MonoBehaviour
     {
         
     }
+
+    void multiplier()
+    {
+        livesMultiplier();
+        playerSpeedMultiplier();
+        enemySpeedMultiplier();
+    }
+
+    private void livesMultiplier()
+    {
+        if (lives == 3)
+        {
+            scoreMultiplier += 1;
+        }
+        else if (lives == 2)
+        {
+            scoreMultiplier += 2;
+        }
+        else if (lives == 1)
+        {
+            scoreMultiplier += 3;
+        }
+    }
+
+    private void playerSpeedMultiplier()
+    {
+        if (playerSpeed == 3)
+        {
+            scoreMultiplier += 1;
+        }
+        else if (playerSpeed == 2)
+        {
+            scoreMultiplier += 2;
+        }
+        else if (playerSpeed == 1)
+        {
+            scoreMultiplier += 3;
+        }
+    }
+
+    private void enemySpeedMultiplier()
+    {
+        if (enemySpeed == 1)
+        {
+            scoreMultiplier += 1;
+        }
+        else if (enemySpeed == 2)
+        {
+            scoreMultiplier += 2;
+        }
+        else if (enemySpeed == 3)
+        {
+            scoreMultiplier += 3;
+        }
+
+
+    }
 }
