@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class killPlayer : MonoBehaviour
 {
+    [SerializeField] int lives = 3;
     // Start is called before the first frame update
     void Start()
     {
-        
+     
     }
 
     // Update is called once per frame
@@ -19,6 +20,15 @@ public class killPlayer : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
+        {
+            reduceLives();
+        }
+    }
+
+    private void reduceLives()
+    {
+        lives -= 1;
+        if (lives <= 0)
         {
             Destroy(gameObject);
         }
