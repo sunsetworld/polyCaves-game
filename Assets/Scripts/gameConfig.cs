@@ -81,4 +81,14 @@ public class gameConfig : MonoBehaviour
 
 
     }
+
+    public int GetLives()
+    {
+        return lives;
+    }
+
+    public void reduceLives()
+    {
+        lives -= 1;
+    }
 }

@@ -35,4 +35,9 @@ public class killPlayer : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public int GetLives()
+    {
+        return lives;
+    }
 }

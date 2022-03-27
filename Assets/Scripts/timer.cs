@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class timer : MonoBehaviour
 {
-    [SerializeField] float gameTimer = 100f;
+    [SerializeField] float gameTimer = 100;
     [SerializeField] GameObject player;
     // Start is called before the first frame update
     void Start()
