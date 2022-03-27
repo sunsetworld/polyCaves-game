@@ -44,14 +44,14 @@ public class scoringAndLives : MonoBehaviour
 
         if (kP.GetLives() > 0)
         {
-            livesTxt.text = kP.GetLives().ToString();
+            livesTxt.text = "Lives = " + kP.GetLives().ToString();
         }
         else if (kP.GetLives() < 0)
         {
             livesTxt.text = "):";
         }
 
-        scoreTxt.text = cT.GetScore().ToString();
+        scoreTxt.text = "Score = " + cT.GetScore().ToString();
 
     }
 }
