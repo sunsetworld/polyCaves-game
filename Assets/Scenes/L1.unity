@@ -292,6 +292,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 760794538}
     m_Modifications:
+    - target: {fileID: 6956233654815253275, guid: c88f704a802b74c28b66f57564303b50, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7147437864426604544, guid: c88f704a802b74c28b66f57564303b50, type: 3}
       propertyPath: m_Name
       value: Spikes
@@ -522,6 +526,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 760794538}
     m_Modifications:
+    - target: {fileID: 6956233654815253275, guid: c88f704a802b74c28b66f57564303b50, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7147437864426604544, guid: c88f704a802b74c28b66f57564303b50, type: 3}
       propertyPath: m_Name
       value: Spikes (2)
@@ -1049,6 +1057,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 760794538}
     m_Modifications:
+    - target: {fileID: 6956233654815253275, guid: c88f704a802b74c28b66f57564303b50, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7147437864426604544, guid: c88f704a802b74c28b66f57564303b50, type: 3}
       propertyPath: m_Name
       value: Spikes (1)

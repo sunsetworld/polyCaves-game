@@ -29,19 +29,15 @@ public class killPlayer : MonoBehaviour
 
     private void reduceLives()
     {
+        Debug.Log("The game is reducing lives.");
         lives -= 1;
         
         if (lives <= 0)
         {
             lives = 0;
             Invoke("death", 0.2f);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            Invoke("reloadTheCurrentLevel", 1f);
-=======
->>>>>>> parent of 4f8a146 (Changes treasures line to list, testing.)
-=======
->>>>>>> parent of 4f8a146 (Changes treasures line to list, testing.)
+            reloadTheCurrentLevel();
+
         }
     }
 
