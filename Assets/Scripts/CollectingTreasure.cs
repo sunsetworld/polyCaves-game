@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollectingTreasure : MonoBehaviour
 {
     [SerializeField] int score = 0;
+    [SerializeField] GameObject[] treasure;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +31,13 @@ public class CollectingTreasure : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+
+    private void loadNextLevel()
+    {
+        if (score >= treasure.Length)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }
