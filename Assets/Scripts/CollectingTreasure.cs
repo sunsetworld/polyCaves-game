@@ -29,4 +29,15 @@ public class CollectingTreasure : MonoBehaviour
     {
         return score;
     }
+<<<<<<< HEAD
+=======
+
+    private void loadNextLevel()
+    {
+        if (treasure.Count == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+>>>>>>> parent of 8acc9fa (:()
 }
