@@ -37,6 +37,7 @@ public class CollectingTreasure : MonoBehaviour
     {
         if (score >= treasure.Length)
         {
+<<<<<<< HEAD
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
@@ -44,4 +45,9 @@ public class CollectingTreasure : MonoBehaviour
     private static void lNL()
     {
     }
+=======
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+>>>>>>> parent of 8acc9fa (:()
 }
