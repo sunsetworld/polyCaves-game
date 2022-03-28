@@ -39,7 +39,12 @@ public class CollectingTreasure : MonoBehaviour
     {
         if (treasure.Count == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Invoke("lNL", 1f);
         }
+    }
+
+    private static void lNL()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
