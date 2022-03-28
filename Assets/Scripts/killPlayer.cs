@@ -38,14 +38,14 @@ public class killPlayer : MonoBehaviour
         {
             Debug.Log("This should then kill the player.");
             lives = 0;
-            Invoke("death", 0.2f);
-            reloadTheCurrentLevel();
+            Invoke("death", 0.5f);
         }
     }
 
     private void death()
     {
         Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public int GetLives()
@@ -53,8 +53,4 @@ public class killPlayer : MonoBehaviour
         return lives;
     }
 
-    private void reloadTheCurrentLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }
