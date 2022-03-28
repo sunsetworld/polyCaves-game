@@ -35,6 +35,7 @@ public class killPlayer : MonoBehaviour
         {
             lives = 0;
             Invoke("death", 0.2f);
+            reloadTheCurrentLevel();
         }
     }
 

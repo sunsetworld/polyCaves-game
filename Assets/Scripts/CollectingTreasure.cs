@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CollectingTreasure : MonoBehaviour
 {
     [SerializeField] int score = 0;
-    [SerializeField] GameObject[] treasure;
+    [SerializeField] List<GameObject> treasure;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +17,7 @@ public class CollectingTreasure : MonoBehaviour
     void Update()
     {
         Debug.Log(score.ToString());
+        loadNextLevel();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,6 +25,7 @@ public class CollectingTreasure : MonoBehaviour
         if (other.tag == "Treasure")
         {
             Destroy(other.gameObject);
+            treasure.Remove(other.gameObject);
             score += 1;
         }
     }
@@ -35,9 +37,9 @@ public class CollectingTreasure : MonoBehaviour
 
     private void loadNextLevel()
     {
-        if (score >= treasure.Length)
+        if (treasure.Count == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
