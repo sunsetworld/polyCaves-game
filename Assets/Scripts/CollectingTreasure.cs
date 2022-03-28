@@ -38,7 +38,11 @@ public class CollectingTreasure : MonoBehaviour
         if (score >= treasure.Length)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             Invoke("lNL", 1f);
+=======
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+>>>>>>> parent of 4f8a146 (Changes treasures line to list, testing.)
 =======
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 >>>>>>> parent of 4f8a146 (Changes treasures line to list, testing.)
