@@ -16,7 +16,11 @@ public class CollectingTreasure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         loadNextLevel();
+=======
+        Debug.Log(score.ToString());
+>>>>>>> parent of 4f8a146 (Changes treasures line to list, testing.)
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,7 +41,7 @@ public class CollectingTreasure : MonoBehaviour
     {
         if (score >= treasure.Length)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
