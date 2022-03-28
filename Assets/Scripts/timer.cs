@@ -24,15 +24,10 @@ public class timer : MonoBehaviour
             {
                 Destroy(enemies);
             }
-<<<<<<< HEAD
-            reloadGame();
-=======
->>>>>>> parent of 9683977 (Some changes (Time for a 0.2 build?))
         }
     }
     public float GetgameTimer()
-    {
+     {
         return gameTimer;
-
     }
 }
