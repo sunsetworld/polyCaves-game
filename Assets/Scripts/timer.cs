@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class timer : MonoBehaviour
 {
     [SerializeField] float gameTimer = 100;
     [SerializeField] GameObject player;
     [SerializeField] GameObject enemies;
+    [SerializeField] GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +26,17 @@ public class timer : MonoBehaviour
             {
                 Destroy(enemies);
             }
+            Invoke("reloadGame", 1f);
         }
     }
     public float GetgameTimer()
-     {
+    {
         return gameTimer;
+
+    }
+
+    private void reloadGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

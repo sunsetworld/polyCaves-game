@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class killPlayer : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class killPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.tag == "Enemy")
         {
             reduceLives();
             Destroy(other.gameObject);
@@ -28,17 +29,13 @@ public class killPlayer : MonoBehaviour
 
     private void reduceLives()
     {
-        Debug.Log("The game is reducing lives.");
         lives -= 1;
         
         if (lives <= 0)
         {
             lives = 0;
             Invoke("death", 0.2f);
-<<<<<<< HEAD
-=======
             reloadTheCurrentLevel();
->>>>>>> parent of 8acc9fa (:()
         }
     }
 
@@ -50,5 +47,10 @@ public class killPlayer : MonoBehaviour
     public int GetLives()
     {
         return lives;
+    }
+
+    private void reloadTheCurrentLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

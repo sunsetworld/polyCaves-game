@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollectingTreasure : MonoBehaviour
 {
     [SerializeField] int score = 0;
+    [SerializeField] List<GameObject> treasure;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,8 @@ public class CollectingTreasure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(score.ToString());
+        loadNextLevel();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,6 +25,7 @@ public class CollectingTreasure : MonoBehaviour
         if (other.tag == "Treasure")
         {
             Destroy(other.gameObject);
+            treasure.Remove(other.gameObject);
             score += 1;
         }
     }
@@ -29,8 +34,6 @@ public class CollectingTreasure : MonoBehaviour
     {
         return score;
     }
-<<<<<<< HEAD
-=======
 
     private void loadNextLevel()
     {
@@ -39,5 +42,4 @@ public class CollectingTreasure : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
->>>>>>> parent of 8acc9fa (:()
 }
