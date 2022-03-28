@@ -26,7 +26,7 @@ public class timer : MonoBehaviour
             {
                 Destroy(enemies);
             }
-            Invoke("reloadGame", 1f);
+            reloadGame();
         }
     }
     public float GetgameTimer()

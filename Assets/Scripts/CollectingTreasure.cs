@@ -16,11 +16,7 @@ public class CollectingTreasure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
         loadNextLevel();
-=======
->>>>>>> parent of 4f8a146 (Changes treasures line to list, testing.)
-        Debug.Log(score.ToString());
     }
 
     private void OnTriggerEnter2D(Collider2D other)

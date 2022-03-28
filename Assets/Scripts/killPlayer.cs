@@ -20,7 +20,7 @@ public class killPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
             reduceLives();
             Destroy(other.gameObject);
@@ -36,11 +36,7 @@ public class killPlayer : MonoBehaviour
         {
             lives = 0;
             Invoke("death", 0.2f);
-<<<<<<< HEAD
-
             reloadTheCurrentLevel();
-=======
->>>>>>> parent of 4f8a146 (Changes treasures line to list, testing.)
         }
     }
 
