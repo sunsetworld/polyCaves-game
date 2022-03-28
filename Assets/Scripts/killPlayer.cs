@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class killPlayer : MonoBehaviour
 {
-    [SerializeField] List<GameObject> enemies;
     [SerializeField] int lives = 3;
     // Start is called before the first frame update
     void Start()
@@ -23,17 +22,21 @@ public class killPlayer : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            Debug.Log("This should only run if the player is colliding with the enemy");
             reduceLives();
+            Debug.Log("This should take 1 enemy off the game.");
             Destroy(other.gameObject);
         }
     }
 
     private void reduceLives()
     {
+        Debug.Log("This should take a life off the player.");
         lives -= 1;
         
         if (lives <= 0)
         {
+            Debug.Log("This should then kill the player.");
             lives = 0;
             Invoke("death", 0.2f);
             reloadTheCurrentLevel();
