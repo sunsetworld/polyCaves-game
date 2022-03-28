@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class killPlayer : MonoBehaviour
 {
@@ -48,10 +47,5 @@ public class killPlayer : MonoBehaviour
     public int GetLives()
     {
         return lives;
-    }
-
-    private void reloadTheCurrentLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

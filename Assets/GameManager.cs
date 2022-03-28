@@ -13,19 +13,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        reloadWithEscape();
-    }
-
-    private static void reloadWithEscape()
-    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(0);
         }
-    }
-
-    public void goToNextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

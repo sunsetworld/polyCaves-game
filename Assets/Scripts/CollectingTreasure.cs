@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CollectingTreasure : MonoBehaviour
 {
     [SerializeField] int score = 0;
-    [SerializeField] GameObject[] treasure;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +30,7 @@ public class CollectingTreasure : MonoBehaviour
     {
         return score;
     }
+<<<<<<< HEAD
 
     private void loadNextLevel()
     {
@@ -41,4 +40,6 @@ public class CollectingTreasure : MonoBehaviour
         }
     }
 
+=======
+>>>>>>> parent of 9683977 (Some changes (Time for a 0.2 build?))
 }
