@@ -36,11 +36,8 @@ public class killPlayer : MonoBehaviour
         {
             lives = 0;
             Invoke("death", 0.2f);
-<<<<<<< HEAD
-            reloadTheCurrentLevel();
 
-=======
->>>>>>> parent of 4f8a146 (Changes treasures line to list, testing.)
+            reloadTheCurrentLevel();
         }
     }
 
