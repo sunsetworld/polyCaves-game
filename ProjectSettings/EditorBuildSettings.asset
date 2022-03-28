@@ -4,12 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/L1.unity
-=======
-    path: Assets/Scenes/L3.unity
->>>>>>> parent of 8acc9fa (:()
-    guid: 2cda990e2423bbf4892e6590ba056729
+  m_Scenes: []
   m_configObjects: {}
