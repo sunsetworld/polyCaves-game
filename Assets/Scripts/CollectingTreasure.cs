@@ -16,7 +16,6 @@ public class CollectingTreasure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(score.ToString());
         loadNextLevel();
     }
 
@@ -39,7 +38,7 @@ public class CollectingTreasure : MonoBehaviour
     {
         if (treasure.Count == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

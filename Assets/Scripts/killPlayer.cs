@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class killPlayer : MonoBehaviour
 {
+    [SerializeField] List<GameObject> enemies;
     [SerializeField] int lives = 3;
     // Start is called before the first frame update
     void Start()
