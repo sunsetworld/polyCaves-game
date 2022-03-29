@@ -45,7 +45,7 @@ public class killPlayer : MonoBehaviour
     private void death()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(4);
     }
 
     public int GetLives()
