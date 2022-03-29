@@ -45,4 +45,18 @@ public class mainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void easy()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void medium()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void hard()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
