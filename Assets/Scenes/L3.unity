@@ -1598,6 +1598,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bcb994a9c23b514fa9be29eb015c35f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1754562025
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754562016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5dd489ee9c1ebd4f84007319f1c8e46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &1754562028 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8182984286565615294, guid: 937df381d37456b42bdccbcbe7aedfa2, type: 3}
+  m_PrefabInstance: {fileID: 8182984285096819549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1755823054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2239,6 +2264,14 @@ PrefabInstance:
       propertyPath: treasure.Array.data[13]
       value: 
       objectReference: {fileID: 1460028352}
+    - target: {fileID: 8182984286565615289, guid: 937df381d37456b42bdccbcbe7aedfa2, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1754562028}
+    - target: {fileID: 8182984286565615289, guid: 937df381d37456b42bdccbcbe7aedfa2, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1754562025}
     - target: {fileID: 8182984286565615289, guid: 937df381d37456b42bdccbcbe7aedfa2, type: 3}
       propertyPath: moveSpeed
       value: 6
