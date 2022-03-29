@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dff54e99b7f04a8ca626e575e1b6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimer: 20
+  gameTimer: 60
   player: {fileID: 1754562016}
   enemies: {fileID: 7147437864426604544, guid: c88f704a802b74c28b66f57564303b50, type: 3}
   gm: {fileID: 0}
