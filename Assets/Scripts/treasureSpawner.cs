@@ -6,31 +6,30 @@ public class treasureSpawner : MonoBehaviour
 {
     [SerializeField] Vector3 originalLocation;
     [SerializeField] GameObject treasure;
+    [SerializeField] Vector3 newLocation;
     float spawnTime;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnTreasure());
-        originalLocation = new Vector3(transform.position.x, transform.position.y, -1);
-        // 7, 4, -1
+        spawnTime = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        spawnTime += 1 * Time.deltaTime;
+        if (spawnTime > 6)
+        {
+            spawnTreasure();
+            spawnTime = 0;
+            spawnTime += 1 * Time.deltaTime;
+        }
     }
 
-    IEnumerator spawnTreasure()
+    void spawnTreasure()
     {
-        Instantiate(treasure, originalLocation, Quaternion.identity);
-        spawnTime = Random.Range(1, 2);
-        originalLocation = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), -1);  
-        yield return new WaitForSeconds(spawnTime);
-        Instantiate(treasure, originalLocation, Quaternion.identity);
+        newLocation = new Vector3(transform.position.x, transform.position.y, -1);
+        Instantiate(treasure, newLocation, Quaternion.identity);
     }
 
-    void startSpawning()
-    {
-        StartCoroutine(spawnTreasure());
-    }
 }
