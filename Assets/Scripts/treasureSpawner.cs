@@ -18,7 +18,7 @@ public class treasureSpawner : MonoBehaviour
     void Update()
     {
         spawnTime += 1 * Time.deltaTime;
-        if (spawnTime > 6)
+        if (spawnTime > 7)
         {
             spawnTreasure();
             spawnTime = 0;
