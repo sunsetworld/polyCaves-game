@@ -8,6 +8,10 @@ public class enemyMovement : MonoBehaviour
 
     private Transform target;
 
+    [SerializeField] GameObject enemy;
+    [SerializeField] Rigidbody2D rigidbody;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,5 +28,16 @@ public class enemyMovement : MonoBehaviour
         int randomX = Random.Range(1, 7);
         int randomY = Random.Range(1, 7);
         transform.position = Vector3.MoveTowards(new Vector3(transform.position.x, transform.position.y, -1), target.position, speed * Time.deltaTime);
+        rigidbody.position = new Vector3(transform.position.x, transform.position.y, -1);
+        rigidbody.MovePosition(new Vector2(transform.position.x, transform.position.y));
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("This should trigger.");
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            enemy.transform.position = new Vector3(enemy.transform.position.x + 3, transform.position.y + 3, -1);
+        }
     }
 }
