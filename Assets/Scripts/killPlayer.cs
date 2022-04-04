@@ -18,14 +18,15 @@ public class killPlayer : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("This should only run if the player is colliding with the enemy");
             reduceLives();
             Debug.Log("This should take 1 enemy off the game.");
-            Destroy(other.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 
