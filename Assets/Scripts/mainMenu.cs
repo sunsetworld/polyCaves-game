@@ -7,6 +7,8 @@ public class mainMenu : MonoBehaviour
 {
     [SerializeField] Canvas mainMenuCanvas;
     [SerializeField] Canvas settingsCanvas;
+    [SerializeField] AudioSource aS;
+    [SerializeField] AudioClip menu1;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,21 +35,25 @@ public class mainMenu : MonoBehaviour
 
     public void playGame()
     {
+        AudioSource.PlayClipAtPoint(menu1, transform.position);
         SceneManager.LoadScene(1);
     }
 
     public void quitGame()
     {
+        AudioSource.PlayClipAtPoint(menu1, transform.position);
         Application.Quit();
     }
 
     public void goToMainMenu()
     {
+        AudioSource.PlayClipAtPoint(menu1, transform.position);
         SceneManager.LoadScene(0);
     }
 
     public void easy()
     {
+        AudioSource.PlayClipAtPoint(menu1, transform.position);
         SceneManager.LoadScene(1);
     }
 
@@ -57,6 +63,7 @@ public class mainMenu : MonoBehaviour
     }
     public void hard()
     {
+        AudioSource.PlayClipAtPoint(menu1, transform.position);
         SceneManager.LoadScene(3);
     }
 }

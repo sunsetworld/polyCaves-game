@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class killPlayer : MonoBehaviour
 {
     [SerializeField] int lives = 3;
+    [SerializeField] AudioSource pAS;
+    [SerializeField] AudioClip hitSound;
+    [SerializeField] AudioClip deathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,7 @@ public class killPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            AudioSource.PlayClipAtPoint(hitSound, Camera.main.transform.position, 1);
             Debug.Log("This should only run if the player is colliding with the enemy");
             reduceLives();
             Debug.Log("This should take 1 enemy off the game.");
@@ -37,6 +41,8 @@ public class killPlayer : MonoBehaviour
         
         if (lives <= 0)
         {
+
+            AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, 1);
             Debug.Log("This should then kill the player.");
             lives = 0;
             Invoke("death", 0.5f);
