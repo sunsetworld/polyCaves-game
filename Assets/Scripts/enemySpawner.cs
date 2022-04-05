@@ -11,7 +11,7 @@ public class enemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        originalLocation = new Vector3(transform.position.x, transform.position.y, -1);
+        originalLocation = new Vector2(transform.position.x, transform.position.y);
     }
 
     // Update is called once per frame

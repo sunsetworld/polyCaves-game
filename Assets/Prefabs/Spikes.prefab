@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7147437864426604548}
   - component: {fileID: 7147437864426604551}
-  - component: {fileID: 7147437864426604550}
   - component: {fileID: 7147437864426604549}
   - component: {fileID: 6956233654815253275}
-  - component: {fileID: -8179718820262412541}
+  - component: {fileID: 8912106111222174976}
   m_Layer: 8
   m_Name: Spikes
   m_TagString: Enemy
@@ -29,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7147437864426604544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.53, y: 2.48, z: -1}
+  m_LocalPosition: {x: -5.53, y: 2.48, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88,32 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7147437864426604550
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7147437864426604544}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &7147437864426604549
 Rigidbody2D:
   serializedVersion: 4
@@ -122,19 +95,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7147437864426604544}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6956233654815253275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,11 +120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf15777a5c742341897835088fe4fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  movingSpeed: 4
   enemy: {fileID: 7147437864426604544}
   rigidbody: {fileID: 7147437864426604549}
---- !u!60 &-8179718820262412541
-PolygonCollider2D:
+--- !u!61 &8912106111222174976
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -163,7 +136,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.01737994, y: -0.034760296}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -173,21 +146,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.29999998, y: -0.5}
-      - {x: 0.42, y: -0.32}
-      - {x: 0.44, y: -0.22}
-      - {x: 0.44, y: 0.34}
-      - {x: 0.35999998, y: 0.44}
-      - {x: 0.32, y: 0.45}
-      - {x: -0.32, y: 0.45}
-      - {x: -0.45, y: 0.35999998}
-      - {x: -0.45999998, y: 0.32999998}
-      - {x: -0.47, y: -0.02}
-      - {x: -0.47, y: -0.29999998}
-      - {x: -0.35999998, y: -0.5}
-      - {x: -0.16, y: -0.5}
-      - {x: -0.14, y: -0.41}
-      - {x: -0.02, y: -0.41}
-      - {x: 0.06, y: -0.5}
+  serializedVersion: 2
+  m_Size: {x: 0.93544567, y: 0.980137}
+  m_EdgeRadius: 0

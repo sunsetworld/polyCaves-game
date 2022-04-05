@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class enemyMovement : MonoBehaviour
 {
-    public float speed;
+    public float movingSpeed;
 
     private Transform target;
+    private Transform enemyTarget;
 
     [SerializeField] GameObject enemy;
     [SerializeField] Rigidbody2D rigidbody;
@@ -17,27 +18,27 @@ public class enemyMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        enemyTarget = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
+        enemy.gameObject.GetComponent<Rigidbody2D>();
 
-
+        // rigidbody.GetComponent<Rigidbody2D>();
 
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        int randomX = Random.Range(1, 7);
-        int randomY = Random.Range(1, 7);
-        transform.position = Vector3.MoveTowards(new Vector3(transform.position.x, transform.position.y, -1), target.position, speed * Time.deltaTime);
-        rigidbody.position = new Vector3(transform.position.x, transform.position.y, -1);
-        rigidbody.MovePosition(new Vector2(transform.position.x, transform.position.y));
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("This should trigger.");
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (Vector2.Distance(transform.position, target.position) < 3.5)
         {
-            enemy.transform.position = new Vector3(enemy.transform.position.x + 3, transform.position.y + 3, -1);
+            rigidbody.MovePosition(Vector3.MoveTowards(transform.position, target.position, movingSpeed * Time.deltaTime));
         }
+        /*
+        if (Vector2.Distance(transform.position, enemyTarget.position) < 1)
+        {
+            rigidbody.MovePosition(new Vector2(transform.position.x + 1, transform.position.y + 1));
+        }
+
+        */
     }
+    
 }

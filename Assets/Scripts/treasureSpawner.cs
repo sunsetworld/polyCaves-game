@@ -28,7 +28,7 @@ public class treasureSpawner : MonoBehaviour
 
     void spawnTreasure()
     {
-        newLocation = new Vector3(transform.position.x, transform.position.y, -1);
+        newLocation = new Vector2(transform.position.x, transform.position.y);
         Instantiate(treasure, newLocation, Quaternion.identity);
     }
 
