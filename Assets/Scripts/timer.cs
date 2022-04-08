@@ -26,7 +26,7 @@ public class timer : MonoBehaviour
             {
                 Destroy(enemies);
             }
-            Invoke("reloadGame", 1f);
+            Invoke("endGame", 1f);
         }
     }
     public float GetgameTimer()
@@ -35,8 +35,8 @@ public class timer : MonoBehaviour
 
     }
 
-    private void reloadGame()
+    private void endGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(4);
     }
 }

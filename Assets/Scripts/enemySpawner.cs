@@ -19,7 +19,7 @@ public class enemySpawner : MonoBehaviour
     {
         spawnTime = Random.Range(1, 10);
         timer += 1 * Time.deltaTime;
-        if (timer > 10f)
+        if (timer >= 10f)
         {
             spawnEnemies();
             timer = 0;
