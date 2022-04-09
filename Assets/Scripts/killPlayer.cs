@@ -26,7 +26,6 @@ public class killPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            AudioSource.PlayClipAtPoint(hitSound, Camera.main.transform.position, 1);
             Debug.Log("This should only run if the player is colliding with the enemy");
             reduceLives();
             Debug.Log("This should take 1 enemy off the game.");
@@ -38,7 +37,11 @@ public class killPlayer : MonoBehaviour
     {
         Debug.Log("This should take a life off the player.");
         lives -= 1;
-        
+        if (lives > 0)
+        {
+            AudioSource.PlayClipAtPoint(hitSound, Camera.main.transform.position, 1);
+        }
+
         if (lives <= 0)
         {
 
