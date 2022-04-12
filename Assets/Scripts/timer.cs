@@ -37,6 +37,6 @@ public class timer : MonoBehaviour
 
     private void endGame()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 }

@@ -26,16 +26,16 @@ public class killPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("This should only run if the player is colliding with the enemy");
+            // Debug.Log("This should only run if the player is colliding with the enemy");
             reduceLives();
-            Debug.Log("This should take 1 enemy off the game.");
+           //  Debug.Log("This should take 1 enemy off the game.");
             Destroy(collision.gameObject);
         }
     }
 
     private void reduceLives()
     {
-        Debug.Log("This should take a life off the player.");
+       // Debug.Log("This should take a life off the player.");
         lives -= 1;
         if (lives > 0)
         {
@@ -46,7 +46,7 @@ public class killPlayer : MonoBehaviour
         {
 
             AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, 1);
-            Debug.Log("This should then kill the player.");
+           // Debug.Log("This should then kill the player.");
             lives = 0;
             Invoke("death", 0.5f);
         }
@@ -55,7 +55,7 @@ public class killPlayer : MonoBehaviour
     private void death()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 
     public int GetLives()

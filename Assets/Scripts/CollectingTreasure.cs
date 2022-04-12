@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class CollectingTreasure : MonoBehaviour
 {
     [SerializeField] int score = 0; // Initializes score int and sets it to 0.
-
-    //  [SerializeField] List<GameObject> treasure;
+    [SerializeField] AudioClip collectSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +23,9 @@ public class CollectingTreasure : MonoBehaviour
         if (other.tag == "Treasure")
             // If the player collides with the treasure.
         {
+            AudioSource.PlayClipAtPoint(collectSFX, transform.position);
             Destroy(other.gameObject);
             // Destorys the treasure.
-            // treasure.Remove(other.gameObject);
             score += 1;
         }
     }
@@ -36,13 +35,4 @@ public class CollectingTreasure : MonoBehaviour
         return score;
         // Returns the value of score. 
     }
-
-
-    // private void loadNextLevel()
-    // {
-    //     if (treasure.Count == 0)
-    //     {
-    //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    //     }
-    // }
 }

@@ -36,7 +36,7 @@ public class mainMenu : MonoBehaviour
     public void playGame()
     {
         AudioSource.PlayClipAtPoint(menu1, transform.position);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void quitGame()
@@ -48,22 +48,22 @@ public class mainMenu : MonoBehaviour
     public void goToMainMenu()
     {
         AudioSource.PlayClipAtPoint(menu1, transform.position);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void easy()
     {
         AudioSource.PlayClipAtPoint(menu1, transform.position);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void medium()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
     public void hard()
     {
         AudioSource.PlayClipAtPoint(menu1, transform.position);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }
