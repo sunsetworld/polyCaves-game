@@ -45,7 +45,7 @@ public class enemySpawner : MonoBehaviour
         if (enemy != null)
         {
             Instantiate(enemy, originalLocation, Quaternion.identity);
-            Debug.Log("Birth for the enemy!");
+         //   Debug.Log("Birth for the enemy!");
         }
 
     }

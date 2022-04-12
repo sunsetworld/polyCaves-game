@@ -7,29 +7,41 @@ public class treasureSpawner : MonoBehaviour
 {
     [SerializeField] Vector3 newLocation;
     [SerializeField] GameObject treasure;
+    GameObject[] tS;
     float spawnTime;
 
     int timerValue;
-    bool spawn = true;
+    bool spawn = false;
 
+    int treasureLimit;
 
+    float tX;
+    float tY;
+
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
+        tX = Random.Range(-6.5f, 6.5f);
+        tY = Random.Range(-3.5f, 3.5f);
+
         spawnTime = 0;
         if (SceneManager.GetActiveScene().name == "L1")
         {
             timerValue = 6;
+            treasureLimit = 5;
         }
         if (SceneManager.GetActiveScene().name == "L2")
         {
             timerValue = 8;
+            treasureLimit = 8;
         }
         if (SceneManager.GetActiveScene().name == "L3")
         {
             timerValue = 10;
+            treasureLimit = 13;
         }
 
     }
@@ -39,8 +51,13 @@ public class treasureSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerForSpawning(timerValue);
+
+       timerForSpawning(timerValue);
+        Debug.Log(spawn);
+
     }
+
+
 
     private void timerForSpawning(int sceneTime)
     {
@@ -50,29 +67,25 @@ public class treasureSpawner : MonoBehaviour
             if (spawn == true)
             {
                 spawnTreasure();
+                spawn = false;
                 spawnTime = 0;
                 spawnTime += 1 * Time.deltaTime;
             }
-
         }
     }
 
     void spawnTreasure()
     {
-        newLocation = new Vector2(transform.position.x, transform.position.y);
+        float tX = Random.Range(-6.5f, 6.5f);
+        float tY = Random.Range(-3.5f, 3.5f);
+        newLocation = new Vector2(tX, tY);
         Instantiate(treasure, newLocation, Quaternion.identity);
     }
 
-    public void toggleSpawn()
+    public void toggleSpawnOn()
     {
-        if (spawn == true)
-        {
-            spawn = false;
-        }
-        else if (spawn == false)
-        {
-            spawn = true;
-        }
+        spawn = true;
     }
+
 
 }

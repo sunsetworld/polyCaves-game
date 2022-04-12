@@ -5,20 +5,53 @@ using UnityEngine.SceneManagement;
 
 public class killPlayer : MonoBehaviour
 {
-    [SerializeField] int lives = 3;
+    int lives;
     [SerializeField] AudioSource pAS;
     [SerializeField] AudioClip hitSound;
     [SerializeField] AudioClip deathSound;
+    int l1 = 3;
+    int l2 = 4;
+    int l3 = 5;
+    [SerializeField] CollectingTreasure cT;
     // Start is called before the first frame update
     void Start()
     {
-     
+        // cT.GetComponent<CollectingTreasure>();
+        if (SceneManager.GetActiveScene().name == "L1")
+        {
+            lives = l1;
+        }
+        if (SceneManager.GetActiveScene().name == "L2")
+        {
+            lives = l2;
+        }
+        if (SceneManager.GetActiveScene().name == "L3")
+        {
+            lives = l3;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RestoreLife();
+        }
+    }
+
+    private void RestoreLife()
+    {
+        if (cT.GetScore() > 10)
+        {
+            lives += 1;
+            cT.ReduceScore();
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        RestoreLife();
     }
 
 
@@ -61,6 +94,11 @@ public class killPlayer : MonoBehaviour
     public int GetLives()
     {
         return lives;
+    }
+
+    private void AddLives()
+    {
+        lives += 1;
     }
 
 }

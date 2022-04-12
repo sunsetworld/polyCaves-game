@@ -139,10 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26b540f294a2d044a8cd764f1559630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 8
   pAS: {fileID: -9171440538779373707}
   hitSound: {fileID: 8300000, guid: c8ef880a05941442ca8634c336cf058c, type: 3}
   deathSound: {fileID: 8300000, guid: 70b138344f19047d89061387cc38bcbc, type: 3}
+  cT: {fileID: 8182984286565615285}
 --- !u!60 &8182984286565615290
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   collectSFX: {fileID: 8300000, guid: 1d4f06526d0bc8347ac1d272cdee4772, type: 3}
+  tS: {fileID: 8209136847844314791, guid: e3ad72c50ecf18649bc8b179815d7db6, type: 3}
 --- !u!95 &1754562025
 Animator:
   serializedVersion: 4
