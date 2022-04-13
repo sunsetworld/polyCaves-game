@@ -11,6 +11,7 @@ public class destroyObject : MonoBehaviour
     [SerializeField] Color32 c2;
     [SerializeField] Sprite s1;
     [SerializeField] Sprite s2;
+    [SerializeField] AudioClip scifi;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +46,11 @@ public class destroyObject : MonoBehaviour
         {
             if (ready)
             {
+                AudioSource.PlayClipAtPoint(scifi, transform.position, 1);
                 Destroy(collision.gameObject);
                 ready = false;
                 timer = 0;
+
             }
 
         }

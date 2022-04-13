@@ -9,6 +9,7 @@ public class killPlayer : MonoBehaviour
     [SerializeField] AudioSource pAS;
     [SerializeField] AudioClip hitSound;
     [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip scifiSound;
     int l1 = 3;
     int l2 = 4;
     int l3 = 5;
@@ -38,12 +39,16 @@ public class killPlayer : MonoBehaviour
         {
             RestoreLife();
         }
+        else if (Input.GetButtonDown("Fire1")) {
+            RestoreLife();
+        }
     }
 
     private void RestoreLife()
     {
         if (cT.GetScore() >= 10)
         {
+            AudioSource.PlayClipAtPoint(scifiSound, transform.position, 1);
             lives += 1;
             cT.ReduceScore();
         }
