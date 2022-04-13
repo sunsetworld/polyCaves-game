@@ -9,6 +9,8 @@ public class destroyObject : MonoBehaviour
     [SerializeField] SpriteRenderer sP;
     [SerializeField] Color32 c1;
     [SerializeField] Color32 c2;
+    [SerializeField] Sprite s1;
+    [SerializeField] Sprite s2;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +26,9 @@ public class destroyObject : MonoBehaviour
     //    Debug.Log("Destroy timer: " + timer.ToString());
         if (!ready)
         {
-         //   Debug.Log(ready);
             if (timer >= 5)
             {
                 ready = true;
-         //       Debug.Log(ready);
             }
         }
         else if (ready)
@@ -51,17 +51,27 @@ public class destroyObject : MonoBehaviour
             }
 
         }
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Treasure")
+        {
+            other.transform.position = new Vector3(other.transform.position.x + 3, other.transform.position.y + 3, other.transform.position.z);
+        }
     }
 
     void ChangeColour()
     {
         if (ready)
         {
-            sP.color = c1;
+            sP.sprite = s1;
         }
         else if (!ready)
         {
-            sP.color = c2;
+            sP.sprite = s2;
         }
     }
 }

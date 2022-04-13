@@ -14,6 +14,7 @@ public class treasureSpawner : MonoBehaviour
     bool spawn;
 
     int treasureLimit;
+    int treasureAmount;
 
     float tX;
     float tY;
@@ -25,6 +26,7 @@ public class treasureSpawner : MonoBehaviour
     void Start()
     {
         spawn = false;
+        treasureAmount = 0;
         tX = Random.Range(-6.5f, 6.5f);
         tY = Random.Range(-3.5f, 3.5f);
 
@@ -42,9 +44,14 @@ public class treasureSpawner : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "L3")
         {
             timerValue = 10;
-            treasureLimit = 13;
+            treasureLimit = 10;
         }
 
+    }
+
+    public void AddCollectedTotal()
+    {
+        treasureAmount += 1;
     }
 
 
@@ -52,38 +59,36 @@ public class treasureSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       timerForSpawning(timerValue);
-
+        Debug.Log(treasureAmount.ToString());
+        spawnTreasure();
+        ToggleSpawning();
     }
 
 
-
-    private void timerForSpawning(int sceneTime)
-    {
-        spawnTime += 1 * Time.deltaTime;
-        if (spawnTime >= sceneTime)
-        {
-            if (spawn)
-            {
-                spawnTreasure();
-                spawnTime = 0;
-                spawnTime += 1 * Time.deltaTime;
-            }
-        }
-    }
 
     void spawnTreasure()
     {
-        float tX = Random.Range(-6.5f, 6.5f);
-        float tY = Random.Range(-3.5f, 3.5f);
-        newLocation = new Vector2(tX, tY);
-        Instantiate(treasure, newLocation, Quaternion.identity);
+        if (spawn)
+        {
+            for (int i = 0; i < treasureLimit; i++)
+            {
+                float tX = Random.Range(-5f, 5f);
+                float tY = Random.Range(-2f, 2f);
+                newLocation = new Vector2(tX, tY);
+                Instantiate(treasure, newLocation, Quaternion.identity);
+            }
+            spawn = false;
+        }
+
     }
 
-    public void toggleSpawnOn()
+    void ToggleSpawning()
     {
-        spawn = true;
+        if (treasureAmount >= treasureLimit)
+        {
+            spawn = true;
+            treasureAmount = 0;
+        }
     }
 
 

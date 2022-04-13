@@ -18,10 +18,5 @@ public class treasure : MonoBehaviour
         
     }
 
-    public bool GetspawnObject()
-    {
-        return spawnObject;
-    }
-
 
 }

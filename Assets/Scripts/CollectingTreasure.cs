@@ -7,10 +7,11 @@ public class CollectingTreasure : MonoBehaviour
 {
     [SerializeField] int score = 0; // Initializes score int and sets it to 0.
     [SerializeField] AudioClip collectSFX;
-    treasureSpawner tS;
+    [SerializeField] treasureSpawner tS;
     // Start is called before the first frame update
     void Start()
     {
+        tS.GetComponent<treasureSpawner>();
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class CollectingTreasure : MonoBehaviour
         if (other.tag == "Treasure")
             // If the player collides with the treasure.
         {
-            other.GetComponent<treasureSpawner>().toggleSpawnOn();
+            tS.AddCollectedTotal();
             AudioSource.PlayClipAtPoint(collectSFX, transform.position);
             Destroy(other.gameObject);
             score += 1;
