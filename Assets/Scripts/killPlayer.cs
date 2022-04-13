@@ -42,7 +42,7 @@ public class killPlayer : MonoBehaviour
 
     private void RestoreLife()
     {
-        if (cT.GetScore() > 10)
+        if (cT.GetScore() >= 10)
         {
             lives += 1;
             cT.ReduceScore();

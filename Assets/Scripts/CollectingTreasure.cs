@@ -24,10 +24,9 @@ public class CollectingTreasure : MonoBehaviour
         if (other.tag == "Treasure")
             // If the player collides with the treasure.
         {
-          //  other.GetComponent<treasureSpawner>().toggleSpawnOn();
+            other.GetComponent<treasureSpawner>().toggleSpawnOn();
             AudioSource.PlayClipAtPoint(collectSFX, transform.position);
             Destroy(other.gameObject);
-            // Destorys the treasure.
             score += 1;
         }
     }

@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class treasureSpawner : MonoBehaviour
 {
-    [SerializeField] Vector3 newLocation;
+    Vector3 newLocation;
     [SerializeField] GameObject treasure;
     GameObject[] tS;
     float spawnTime;
 
     int timerValue;
-    bool spawn = false;
+    bool spawn;
 
     int treasureLimit;
 
@@ -24,6 +24,7 @@ public class treasureSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawn = false;
         tX = Random.Range(-6.5f, 6.5f);
         tY = Random.Range(-3.5f, 3.5f);
 
@@ -53,7 +54,6 @@ public class treasureSpawner : MonoBehaviour
     {
 
        timerForSpawning(timerValue);
-        Debug.Log(spawn);
 
     }
 
@@ -64,10 +64,9 @@ public class treasureSpawner : MonoBehaviour
         spawnTime += 1 * Time.deltaTime;
         if (spawnTime >= sceneTime)
         {
-            if (spawn == true)
+            if (spawn)
             {
                 spawnTreasure();
-                spawn = false;
                 spawnTime = 0;
                 spawnTime += 1 * Time.deltaTime;
             }
